@@ -1,5 +1,6 @@
 var data = Fliplet.Widget.getData() || {
   show_data_values: true,
+  dataFormat: 'number',
   y_axis_title: '',
   x_axis_title: '',
   show_total_entries: '',
