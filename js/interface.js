@@ -1,10 +1,10 @@
 var data = Fliplet.Widget.getData() || {
-  show_data_values: true,
+  showDataValues: true,
   dataFormat: 'number',
-  y_axis_title: '',
-  x_axis_title: '',
-  show_total_entries: '',
-  auto_refresh: ''
+  yAxisTitle: '',
+  xAxisTitle: '',
+  showTotalEntries: '',
+  autoRefresh: ''
 };
 
 var $dataSource = $('select#select-data-source');
@@ -23,11 +23,11 @@ Fliplet.Widget.onSaveRequest(function () {
     dataSourceColumnX: $dataColumnX.val(),
     dataSourceColumnY: $dataColumnY.val(),
     dataFormat: $dataFormat.find(':selected').val(),
-    show_data_values: $('#show_data_values:checked').val() === "show",
-    y_axis_title: $('#yaxis_title').val(),
-    x_axis_title: $('#xaxis_title').val(),
-    show_total_entries: $('#show_total_entries:checked').val() === "show",
-    auto_refresh: $('#auto_refresh:checked').val() === "refresh"
+    showDataValues: $('#show_data_values:checked').val() === "show",
+    yAxisTitle: $('#y_axis_title').val(),
+    xAxisTitle: $('#x_axis_title').val(),
+    showTotalEntries: $('#show_total_entries:checked').val() === "show",
+    autoRefresh: $('#auto_refresh:checked').val() === "refresh"
   }).then(function () {
     Fliplet.Widget.complete();
   });
@@ -61,11 +61,11 @@ Fliplet.DataSources.get({
 // LOAD CHART SETTINGS
 if (data) {
   $dataFormat.val(data.dataFormat || 'number').trigger('change');
-  $('#show_data_values').prop('checked', data.show_data_values);
-  $('#yaxis_title').val(data.y_axis_title);
-  $('#xaxis_title').val(data.x_axis_title);
-  $('#show_total_entries').prop('checked', data.show_total_entries);
-  $('#auto_refresh').prop('checked', data.auto_refresh);
+  $('#show_data_values').prop('checked', data.showDataValues);
+  $('#y_axis_title').val(data.yAxisTitle);
+  $('#x_axis_title').val(data.xAxisTitle);
+  $('#show_total_entries').prop('checked', data.showTotalEntries);
+  $('#auto_refresh').prop('checked', data.autoRefresh);
 }
 
 // ATTACH LISTENERS
