@@ -1,0 +1,15 @@
+.highcharts-credits {
+    display: none;
+}
+.highcharts-axis-line {
+    stroke: #6c9f1f;
+}
+.chart-line-updatedAt,
+.chart-line-total {
+    text-align: center;
+    color: #c2c2c2;
+}
+.chart-line-updatedAt > .updatedAt,
+.chart-line-total > .total {
+    color: #888888;
+}

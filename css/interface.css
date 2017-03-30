@@ -1,0 +1,12 @@
+body {
+  background-color: transparent;
+}
+
+.widget-holder {
+  padding: 15px;
+}
+
+.fl-widget-provider {
+  width: 100%;
+  border: 0;
+}

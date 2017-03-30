@@ -1,0 +1,25 @@
+<div class="chart-line-wrapper" data-chart-line-id="{{id}}">
+  {{#if dataSourceId}}
+    <div class="chart-line-container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <div class="container-fluid">
+      <div class="row">
+        {{#if show_total_entries}}
+        <div class="col-xs-6 {{#unless auto_refresh}}col-xs-offset-3{{/unless}}">
+          <div class="chart-line-total"><i class="fa fa-tachometer"></i> Total<br><span class="total">&mdash;</span></div>
+        </div>
+        {{/if}}
+        {{#if auto_refresh}}
+        <div class="col-xs-6 {{#unless show_total_entries}}col-xs-offset-3{{/unless}}">
+          <div class="chart-line-updatedAt"><i class="fa fa-clock-o"></i> Last updated<br><span class="updatedAt">&mdash;</span></div>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  {{else}}
+    <div class="text-center text-muted">
+      <h1><i class="fa fa-cogs fa-2x"></i></h1>
+      <h3>Line Chart</h3>
+      <p>Start configuring your component and the chart will appear here.</p>
+    </div>
+  {{/if}}
+</div>

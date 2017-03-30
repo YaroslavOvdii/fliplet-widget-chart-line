@@ -1,0 +1,137 @@
+<div class="widget-holder">
+
+  <header>
+    <p>Configure your line chart</p>
+    <a href="#">Need help?</a>
+  </header>
+
+  <div class="form-horizontal">
+    <div class="form-group">
+      <div class="col-sm-4 control-label">
+        <label for="select-menu">Select a data source</label>
+      </div>
+      <div class="col-sm-8">
+        <label for="select-menu" class="select-proxy-display">
+          <select name="select_datasource" id="select-data-source" data-label="select" class="hidden-select form-control">
+            <option selected value="">Loading...</option>
+          </select>
+          <span class="icon fa fa-chevron-down"></span>
+          <span class="select-value-proxy">Loading...</span>
+        </label>
+      </div>
+    </div>
+    <div class="form-group select-data-column hidden">
+      <div class="col-sm-4 control-label">
+        <label for="select-data-column-x">Select a column for the X-axis</label>
+      </div>
+      <div class="col-sm-8">
+        <label class="select-proxy-display">
+          <select name="select_datacolumn" id="select-data-column-x" data-label="select" class="hidden-select form-control">
+          </select>
+          <span class="icon fa fa-chevron-down"></span>
+          <span class="select-value-proxy">-- Select a column --</span>
+        </label>
+      </div>
+    </div>
+    <div class="form-group select-data-column hidden">
+      <div class="col-sm-4 control-label">
+        <label for="select-data-column-y">Select a column for the Y-axis</label>
+      </div>
+      <div class="col-sm-8">
+        <label class="select-proxy-display">
+          <select name="select_datacolumn" id="select-data-column-y" data-label="select" class="hidden-select form-control">
+          </select>
+          <span class="icon fa fa-chevron-down"></span>
+          <span class="select-value-proxy">-- Select a column --</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-horizontal hidden" id="column-format">
+    <div class="form-group select-data-column hidden">
+      <div class="col-sm-4 control-label">
+        <label>Format X-axis...</label>
+      </div>
+      <div class="col-sm-8">
+        <label  class="select-proxy-display">
+          <select name="select_dataformat" id="select-data-format" data-label="select" class="hidden-select form-control">
+            <option value="number" selected>as number</option>
+            <option value="timestamp">as date/time</option>
+          </select>
+          <span class="icon fa fa-chevron-down"></span>
+          <span class="select-value-proxy">as number</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-horizontal hidden" id="chart-settings">
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Do you want to enable data values?</label>
+      <div class="col-sm-8">
+        <div class="checkbox checkbox-icon">
+          <input type="checkbox" id="show_data_values" name="show_data_values" value="show" checked>
+          <label for="show_data_values">
+            <span class="check"><i class="fa fa-check"></i></span> Yes, please
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-4 control-label">
+        <label for="xaxix-title">X-Axis title <span class="small-text">(Optional)</span></label>
+      </div>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="xaxis_title" name="xaxix-title" placeholder="Enter title" value="">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-4 control-label">
+        <label for="yaxix-title">Y-Axis title <span class="small-text">(Optional)</span></label>
+      </div>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="yaxis_title" name="yaxix-title" placeholder="Enter title" value="">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Do you want to show the total number of entries?</label>
+      <div class="col-sm-8">
+        <div class="checkbox checkbox-icon">
+          <input type="checkbox" id="show_total_entries" name="show_total_entries" value="show">
+          <label for="show_total_entries">
+            <span class="check"><i class="fa fa-check"></i></span> Yes, please
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Do you want to automatically get new data?</label>
+      <div class="col-sm-8">
+        <div class="checkbox checkbox-icon">
+          <input type="checkbox" id="auto_refresh" name="auto_refresh" value="refresh">
+          <label for="auto_refresh">
+            <span class="check"><i class="fa fa-check"></i></span> Yes, please
+          </label>
+          <span class="text-helper">The chart will get new data every 5 seconds.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <template name="dataSourceTemplate">
+    <option selected value="">-- Select a data source --</option>
+    \{{#each this}}
+    <option value="\{{id}}">\{{name}}</option>
+    \{{/each}}
+  </template>
+
+  <template name="dataColumnTemplate">
+    <option selected value="">-- Select a column --</option>
+    \{{#each this}}
+    <option value="\{{this}}">\{{this}}</option>
+    \{{/each}}
+  </template>
+
+</div>
