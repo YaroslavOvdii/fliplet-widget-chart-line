@@ -143,6 +143,9 @@ Fliplet().then(function(){
         }],
         legend: {
           enabled: false
+        },
+        credits: {
+          enabled: false
         }
       };
       // Create and save chart object
