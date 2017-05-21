@@ -103,7 +103,7 @@ Fliplet().then(function(){
         },
         xAxis: {
           title: {
-            text: data.xAxisTitle,
+            text: data.xAxisTitle || data.dataSourceQuery.xAxis,
             enabled: data.xAxisTitle !== ''
           },
           labels: {
@@ -120,7 +120,7 @@ Fliplet().then(function(){
         },
         yAxis: {
           title: {
-            text: data.yAxisTitle,
+            text: data.yAxisTitle || data.dataSourceQuery.yAxis,
             enabled: data.yAxisTitle !== ''
           }
         },
@@ -129,11 +129,17 @@ Fliplet().then(function(){
           headerFormat: '',
           pointFormat: [
             '<strong>',
-            (data.xAxisTitle !== '' ? data.xAxisTitle : 'x'),
+            (data.xAxisTitle !== ''
+              ? data.xAxisTitle
+              : data.dataSourceQuery.xAxis),
             '</strong> ',
-            (data.dataFormat === 'timestamp' ? '{point.x:%Y-%m-%d %H:%M:%S}' : '{point.x}'),
+            (data.dataFormat === 'timestamp'
+              ? '{point.x:%Y-%m-%d %H:%M:%S}'
+              : '{point.x}'),
             '<br><strong>',
-            (data.yAxisTitle !== '' ? data.yAxisTitle : 'y'),
+            (data.yAxisTitle !== ''
+              ? data.yAxisTitle
+              : data.dataSourceQuery.yAxis),
             '</strong>: {point.y}'
           ].join('')
         },
