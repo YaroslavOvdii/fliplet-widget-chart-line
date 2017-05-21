@@ -15,8 +15,7 @@ Fliplet().then(function(){
 
     function refreshData() {
       return Fliplet.DataSources.fetchWithOptions(data.dataSourceQuery).then(function(result){
-        data.entries = [];
-        data.totalEntries = 0;
+        resetData();
         if (result.dataSource.columns.indexOf(data.dataSourceQuery.columns.xAxis) < 0 || result.dataSource.columns.indexOf(data.dataSourceQuery.columns.yAxis) < 0) {
           return Promise.resolve();
         }
