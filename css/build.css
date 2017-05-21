@@ -1,9 +1,9 @@
 .chart-line-updatedAt,
 .chart-line-total {
-    text-align: center;
-    color: #c2c2c2;
+  text-align: center;
+  color: #c2c2c2;
 }
 .chart-line-updatedAt > .updatedAt,
 .chart-line-total > .total {
-    color: #888888;
+  color: #888888;
 }
