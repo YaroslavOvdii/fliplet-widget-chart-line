@@ -144,8 +144,7 @@ Fliplet().then(function(){
           ].join('')
         },
         series: [{
-          data: data.entries,
-          color: '#3276b1'
+          data: data.entries
         }],
         legend: {
           enabled: false
