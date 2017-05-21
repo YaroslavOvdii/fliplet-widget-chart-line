@@ -6,50 +6,8 @@
   </header>
 
   <div class="form-horizontal">
+    <div class="form-group data-source-query"></div>
     <div class="form-group">
-      <div class="col-sm-4 control-label">
-        <label for="select-data-source">Select a data source</label>
-      </div>
-      <div class="col-sm-8">
-        <label for="select-data-source" class="select-proxy-display">
-          <select name="select_datasource" id="select-data-source" data-label="select" class="hidden-select form-control">
-            <option selected value="">Loading...</option>
-          </select>
-          <span class="icon fa fa-chevron-down"></span>
-          <span class="select-value-proxy">Loading...</span>
-        </label>
-      </div>
-    </div>
-    <div class="form-group select-data-column hidden">
-      <div class="col-sm-4 control-label">
-        <label for="select-data-column-x">Select a column for the X-axis</label>
-      </div>
-      <div class="col-sm-8">
-        <label class="select-proxy-display">
-          <select name="select-data-column-x" id="select-data-column-x" data-label="select" class="hidden-select form-control">
-          </select>
-          <span class="icon fa fa-chevron-down"></span>
-          <span class="select-value-proxy">-- Select a column --</span>
-        </label>
-      </div>
-    </div>
-    <div class="form-group select-data-column hidden">
-      <div class="col-sm-4 control-label">
-        <label for="select-data-column-y">Select a column for the Y-axis</label>
-      </div>
-      <div class="col-sm-8">
-        <label class="select-proxy-display">
-          <select name="select-data-column-y" id="select-data-column-y" data-label="select" class="hidden-select form-control">
-          </select>
-          <span class="icon fa fa-chevron-down"></span>
-          <span class="select-value-proxy">-- Select a column --</span>
-        </label>
-      </div>
-    </div>
-  </div>
-
-  <div class="form-horizontal hidden" id="column-format">
-    <div class="form-group select-data-column hidden">
       <div class="col-sm-4 control-label">
         <label>Format X-axis...</label>
       </div>
@@ -64,9 +22,6 @@
         </label>
       </div>
     </div>
-  </div>
-
-  <div class="form-horizontal hidden" id="chart-settings">
     <div class="form-group">
       <label class="col-sm-4 control-label">Do you want to enable data values?</label>
       <div class="col-sm-8">
@@ -117,21 +72,5 @@
         </div>
       </div>
     </div>
-
   </div>
-
-  <template name="dataSourceTemplate">
-    <option selected value="">-- Select a data source --</option>
-    \{{#each this}}
-    <option value="\{{id}}">\{{name}}</option>
-    \{{/each}}
-  </template>
-
-  <template name="dataColumnTemplate">
-    <option selected value="">-- Select a column --</option>
-    \{{#each this}}
-    <option value="\{{this}}">\{{this}}</option>
-    \{{/each}}
-  </template>
-
 </div>

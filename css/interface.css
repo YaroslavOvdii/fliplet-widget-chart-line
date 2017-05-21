@@ -8,5 +8,11 @@ body {
 
 .fl-widget-provider {
   width: 100%;
-  border: 0;
+  height: 24px;
+  border: none;
+}
+
+.data-source-query {
+  min-height: 24px;
+  margin-bottom: 0;
 }
