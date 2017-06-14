@@ -1,9 +1,30 @@
-.chart-line-updatedAt,
-.chart-line-total {
+.chart-line-wrapper .chart-placeholder {
+  position: relative;
+}
+.chart-line-wrapper .chart-placeholder .chart-container {
+  opacity: 0.3;
+  pointer-events: none;
+}
+.chart-line-wrapper .chart-placeholder-text {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+}
+.chart-line-wrapper .chart-container {
+  min-width: 310px;
+  height: 400px;
+  margin: 0 auto;
+}
+.chart-line-wrapper .chart-updatedAt,
+.chart-line-wrapper .chart-total {
   text-align: center;
   color: #c2c2c2;
 }
-.chart-line-updatedAt > .updatedAt,
-.chart-line-total > .total {
+.chart-line-wrapper .chart-updatedAt > .updatedAt,
+.chart-line-wrapper .chart-total > .total {
   color: #888888;
 }
