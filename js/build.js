@@ -56,9 +56,10 @@
             data.totalEntries = data.entries.length;
 
             return Promise.resolve();
-        }).catch(function(error){
-          return Promise.reject(error);
-        });
+          }).catch(function(error){
+            return Promise.reject(error);
+          });
+        })
       }
 
       function refreshChartInfo() {
@@ -171,14 +172,14 @@
                 Fliplet.Analytics.trackEvent({
                   category: 'chart',
                   action: 'data_point_interact',
-                  title: 'line'
+                  label: 'line'
                 });
               },
               legendItemClick: function () {
                 Fliplet.Analytics.trackEvent({
                   category: 'chart',
                   action: 'legend_filter',
-                  title: 'line'
+                  label: 'line'
                 });
               }
             }
