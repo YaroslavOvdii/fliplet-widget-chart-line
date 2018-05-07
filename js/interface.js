@@ -80,7 +80,7 @@ function attachObservers() {
       dataFormat: $dataFormat.find(':selected').val(),
       chartHeightSm: $('#chart_height_sm').val(),
       chartHeightMd: $('#chart_height_md').val(),
-      showDataValues: $('#show_data_values:checked').val() === "show",
+      showDataValues: $('#show_data_values').is(':checked'),
       yAxisTitle: $('#y_axis_title').val(),
       xAxisTitle: $('#x_axis_title').val(),
       showTotalEntries: $('#show_total_entries').is(':checked'),

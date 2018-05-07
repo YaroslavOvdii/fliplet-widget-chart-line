@@ -11,6 +11,7 @@
   opacity: 0.3;
   pointer-events: none;
 }
+
 .chart-line-wrapper .chart-placeholder-text {
   position: absolute;
   top: 50%;
@@ -19,23 +20,25 @@
   -webkit-transform: translate3d(0, -50%, 0);
   transform: translate3d(0, -50%, 0);
 }
+
 .chart-line-wrapper .chart-container {
   min-height: 100px;
   margin: 0 auto;
-}
-.chart-line-wrapper .chart-container {
   height: 400px;
 }
+
 @media screen and (min-width: 640px) {
   .chart-line-wrapper .chart-container {
     height: 500px;
   }  
 }
+
 .chart-line-wrapper .chart-updatedAt,
 .chart-line-wrapper .chart-total {
   text-align: center;
   color: #c2c2c2;
 }
+
 .chart-line-wrapper .chart-updatedAt > .updatedAt,
 .chart-line-wrapper .chart-total > .total {
   color: #888888;

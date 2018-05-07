@@ -16,7 +16,7 @@
       }
 
       function refreshData() {
-        if (typeof data.dataSourceQuery !== 'object' && !data.dataSourceId) {
+        if (typeof data.dataSourceQuery !== 'object') {
           data.entries = [
             {x: 1, y: 2},
             {x: 2, y: 1.5},
