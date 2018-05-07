@@ -5,7 +5,7 @@
   function init() {
     $('[data-chart-line-id]').each(function (i, el) {
       var chartId = $(this).data('chart-line-id');
-      var data = Fliplet.Widget.getData( chartId );
+      var data = Fliplet.Widget.getData(chartId);
       var $container = $(el);
       var refreshTimeout = 5000;
       var updateDateFormat = 'hh:mm:ss a';
@@ -16,7 +16,7 @@
       }
 
       function refreshData() {
-        if (!data.dataSourceQuery) {
+        if (typeof data.dataSourceQuery !== 'object') {
           data.entries = [
             {x: 1, y: 2},
             {x: 2, y: 1.5},
@@ -195,6 +195,14 @@
         ui.flipletCharts[chartId] = new Highcharts.Chart(chartOpt);
       }
 
+      if (Fliplet.Env.get('interact')) {
+        // TinyMCE removes <style> tags, so we've used a <script> tag instead,
+        // which will be appended to <body> to apply the styles
+        $($(this).find('.chart-styles').detach().html()).appendTo('body');
+      } else {
+        $(this).find('.chart-styles').remove();
+      }
+
       refreshData().then(drawChart).catch(function(error){
         console.error(error);
       });
@@ -202,7 +210,7 @@
   }
 
   Fliplet().then(function(){
-    var debounceLoad = _.debounce(init, 500);
+    var debounceLoad = _.debounce(init, 500, { leading: true });
     Fliplet.Studio.onEvent(function (event) {
       if (event.detail.event === 'reload-widget-instance') {
         debounceLoad();
