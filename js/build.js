@@ -85,8 +85,8 @@
 
       function drawChart() {
         var colors = [
-          '#337AB7', '#5BC0DE', '#5CB85C', '#F0AD4E', '#C9302C',
-          '#293954', '#2E6F82', '#3D7A3D', '#B07623', '#963732'
+          '#00abd1', '#ed9119', '#7D4B79', '#F05865', '#36344C',
+          '#474975', '#8D8EA6', '#FF5722', '#009688', '#E91E63'
         ];
         colors.forEach(function eachColor (color, index) {
           if (!Fliplet.Themes) {
