@@ -1,12 +1,6 @@
-var defaultChartHeight = {
-  sm: '400px',
-  md: '500px'
-};
 var defaultData = {
   dataSourceQuery: undefined,
   dataFormat: 'number',
-  chartHeightSm: defaultChartHeight.sm,
-  chartHeightMd: defaultChartHeight.md,
   showDataValues: true,
   yAxisTitle: '',
   xAxisTitle: '',
@@ -42,44 +36,12 @@ var dsQueryProvider = Fliplet.Widget.open('com.fliplet.data-source-query', {
   data: dsQueryData
 });
 
-// Ensure chart heights have a correct default & units
-function validateChartHeight(val, size) {
-  if (typeof val !== 'string') {
-    val = val.toString() || '';
-  }
-
-  if (!val) {
-    // Set empty values to the default
-    val = defaultChartHeight[size];
-  }
-
-  if (parseFloat(val) <= 0) {
-    val = '0px';
-  }
-
-  if (/^\d+$/.test(val)) {
-    // Value contains only numbers
-    val = val + 'px';
-  }
-
-  return val;
-}
-
-function validateForm() {
-  // Validate chart height
-  $('#chart_height_sm').val(validateChartHeight($('#chart_height_sm').val()), 'sm');
-  $('#chart_height_md').val(validateChartHeight($('#chart_height_md').val()), 'md');
-}
-
 function attachObservers() {
   dsQueryProvider.then(function(result){
-    validateForm();
     
     Fliplet.Widget.save({
       dataSourceQuery: result.data,
       dataFormat: $dataFormat.find(':selected').val(),
-      chartHeightSm: $('#chart_height_sm').val(),
-      chartHeightMd: $('#chart_height_md').val(),
       showDataValues: $('#show_data_values').is(':checked'),
       yAxisTitle: $('#y_axis_title').val(),
       xAxisTitle: $('#x_axis_title').val(),
@@ -102,8 +64,6 @@ attachObservers();
 // LOAD CHART SETTINGS
 if (data) {
   $dataFormat.val(data.dataFormat || 'number').trigger('change');
-  $('#chart_height_sm').val(data.chartHeightSm);
-  $('#chart_height_md').val(data.chartHeightMd);
   $('#show_data_values').prop('checked', data.showDataValues);
   $('#y_axis_title').val(data.yAxisTitle);
   $('#x_axis_title').val(data.xAxisTitle);
