@@ -28,30 +28,4 @@
       </div>
     </div>
   {{/if}}
-  {{#and chartHeightSm chartHeightMd}}
-  <style>
-  .chart-line-wrapper[data-chart-line-id="{{id}}"] .chart-container {
-    height: {{chartHeightSm}};
-  }
-
-  @media screen and (min-width: 640px) {
-    .chart-line-wrapper[data-chart-line-id="{{id}}"] .chart-container {
-      height: {{chartHeightMd}};
-    }
-  }
-  </style>
-  <script type="text/html" class="chart-styles">
-    <style>
-    .chart-line-wrapper[data-chart-line-id="{{id}}"] .chart-container {
-      height: {{chartHeightSm}};
-    }
-
-    @media screen and (min-width: 640px) {
-      .chart-line-wrapper[data-chart-line-id="{{id}}"] .chart-container {
-        height: {{chartHeightMd}};
-      }
-    }
-    </style>
-  </script>
-  {{/and}}
 </div>
