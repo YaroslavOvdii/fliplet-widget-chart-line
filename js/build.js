@@ -208,6 +208,10 @@
         $(this).find('.chart-styles').remove();
       }
 
+      Fliplet.Hooks.on('appearanceChanged', function () {
+        ui.flipletCharts[chartId].reflow();
+      });
+
       refreshData().then(drawChart).catch(function(error){
         console.error(error);
       });
