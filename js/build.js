@@ -152,6 +152,7 @@
                 }
               },
               render: function () {
+                ui.flipletCharts[chartId] = this;
                 Fliplet.Hooks.run('afterChartRender', {
                   chart: ui.flipletCharts[chartId],
                   chartOptions: chartOpt,
@@ -251,7 +252,7 @@
           type: chartType,
           config: widgetData
         }).then(function () {
-          ui.flipletCharts[chartId] = new Highcharts.Chart(chartOpt);
+          new Highcharts.Chart(chartOpt);
         });
       }
 
