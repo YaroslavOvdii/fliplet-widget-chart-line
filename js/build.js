@@ -35,8 +35,8 @@
         return Fliplet.Hooks.run('beforeQueryChart', data.dataSourceQuery).then(function() {
           return Fliplet.Hooks.run('beforeChartQuery', {
             config: data,
-            id: widgetId,
-            uuid: widgetUuid,
+            id: data.id,
+            uuid: data.uuid,
             type: 'line'
           });
         }).then(function() {
@@ -56,8 +56,8 @@
           return Fliplet.Hooks.run('afterQueryChart', result).then(function () {
             return Fliplet.Hooks.on('afterChartQuery', {
               config: data,
-              id: widgetId,
-              uuid: widgetUuid,
+              id: data.id,
+              uuid: data.uuid,
               type: 'line',
               records: result
             });
@@ -246,8 +246,8 @@
         // Create and save chart object
         Fliplet.Hooks.run('beforeChartRender', {
           chartOptions: chartOpt,
-          id: widgetId,
-          uuid: widgetUuid,
+          id: data.id,
+          uuid: data.uuid,
           type: chartType,
           config: widgetData
         }).then(function () {
