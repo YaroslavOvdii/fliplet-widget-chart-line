@@ -249,8 +249,8 @@
           chartOptions: chartOpt,
           id: data.id,
           uuid: data.uuid,
-          type: chartType,
-          config: widgetData
+          type: 'line',
+          config: data
         }).then(function () {
           new Highcharts.Chart(chartOpt);
         });
