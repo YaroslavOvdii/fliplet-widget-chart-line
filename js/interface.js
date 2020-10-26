@@ -11,7 +11,10 @@ var data = $.extend(defaultData, Fliplet.Widget.getData());
 
 var dsQueryData = {
   settings: {
-    dataSourceLabel: 'Select a data source',
+    dataSourceTitle: 'Select a data source',
+    default: {
+      name: 'Chart data for ' + Fliplet.Env.get('appName')
+    },
     filters: false,
     columns: [
       {
