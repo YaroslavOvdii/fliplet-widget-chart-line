@@ -50,11 +50,12 @@ var dsQueryProvider = Fliplet.Widget.open('com.fliplet.data-source-query', {
 
 function attachObservers() {
   dsQueryProvider.then(function(result){
-    
+
     Fliplet.Widget.save({
       dataSourceQuery: result.data,
       dataFormat: $dataFormat.find(':selected').val(),
       showDataValues: $('#show_data_values').is(':checked'),
+      chartName: $('#chart_name').val(),
       yAxisTitle: $('#y_axis_title').val(),
       xAxisTitle: $('#x_axis_title').val(),
       showTotalEntries: $('#show_total_entries').is(':checked'),
@@ -77,6 +78,7 @@ attachObservers();
 if (data) {
   $dataFormat.val(data.dataFormat || 'number').trigger('change');
   $('#show_data_values').prop('checked', data.showDataValues);
+  $('#chart_name').val(data.chartName);
   $('#y_axis_title').val(data.yAxisTitle);
   $('#x_axis_title').val(data.xAxisTitle);
   $('#show_total_entries').prop('checked', data.showTotalEntries);
